@@ -1,29 +1,21 @@
 public void setup(){
  size(500,500,P3D);
  rectMode(CENTER);
-
+smooth();
 }
 public void draw(){
   
-background(128,211,227);  
-  myFrac(250,250,250);
-}
-
-
- public void myFrac(int x, int y, int siz){
-   //fill((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));
-  ellipse(x,y,siz,siz);//x,y center and size height and width
+background(0);  
+  myFrac(500,500,500);
   
+}
+ public void myFrac(float x, int y, float siz){
+   translate(width / 2, height / 2);
+   for (int i = 200; i > 0; i = i - 10) {
+    fill(20, 70 - i, 250 - i);
+    rotate((mouseX + mouseY) / 300.0);
+   
+     rect(0,0,i,i);
+    }
 
-  if(siz > 10){
-    fill(255,255,255);
-    myFrac(x + siz/2, y, siz/2);
-    fill(247,140,224);
-    myFrac(x - siz/2, y, siz/2);
-    fill(62,81,193);
-    myFrac(x, y + siz/2, siz/2);
-    fill(186,62,193);
-    myFrac(x, y - siz/2, siz/2);
-    
-  }
  }
